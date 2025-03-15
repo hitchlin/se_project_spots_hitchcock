@@ -1,0 +1,167 @@
+
+.header {
+    padding-top: 34px;
+    max-height: 210px;
+    text-overflow: ellipsis; 
+  }
+
+  .header__profile {
+    display: flex;
+    max-height: 210px;
+    font-family: "Poppins", sans-serif;
+    color: #212121;
+    border-bottom: 1px solid #21212166;
+     }
+
+  .header__profile-avatar {
+    height: 190px;
+    width: 190px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+
+  .header__profile-info {
+    max-width: 420px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__title {
+    font-weight: 500;
+    line-height: 1;
+    font-size: 32px;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .header__subheading {
+    opacity: 70%;
+    font-weight: 500;
+    line-height: 1;
+    font-size: 16px;
+    padding-top: 12px;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .header__edit-button {
+    margin-top: auto;
+    border: none;
+    background: none;
+    align-self: flex-start;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    color: #212112;
+    opacity: 70%;
+    padding: 0;
+  }
+
+  .header__edit-button:hover {
+    opacity: 100%;
+  }
+
+  .header__add-button {
+   /* background-image: url(../images/post_button.png) center no-repeat; */  
+    border: none;
+    /* background: none; */
+    align-self: flex-end;
+    width: 157px;
+    height:52px;
+   margin-left: auto;
+   background-color: #212121;
+   color: #FCF5E5;
+   font-family: "Poppins", sans-serif;
+   border-radius: 8px; 
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 1;
+  }
+
+  .header__add-button:hover {
+    opacity: 80%;
+  }
+
+  @media screen and (max-width: 450px) {
+    .header {
+      padding: 0px;
+   padding-bottom: 20px;
+  width: 288px;
+  max-height: none;      
+}
+
+.header__profile {
+ max-height: none;
+ padding-top: 20px;
+ width: 288px;
+ margin: 0 auto;
+ display:flex;
+ flex-direction: column;
+}
+
+.header__profile-avatar {
+ 
+   width: 80px;
+   height: 80px;
+   margin: 0 auto;
+   padding-bottom: 12px;
+}
+
+.header__profile-info {
+  height: unset;
+}
+
+.header__title {
+ 
+   font-size: 20px;
+   align-self: center;
+   line-height: 1;
+   margin-bottom: 6px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   line-clamp: 3;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;  
+   -webkit-box-orient: vertical;   
+   }
+
+.header__subheading {
+ margin: 0 auto;
+
+  padding-bottom: 32px;
+   font-size:16px ;
+   line-height: 1; 
+   text-overflow: ellipsis;
+   overflow: hidden;
+   line-clamp: 3;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;  
+   -webkit-box-orient: vertical;   
+   
+}
+
+.header__edit-button {
+
+   margin: 0 auto;
+}
+
+.header__button-icon{
+ margin-right: 4px ;
+ height: 12px;
+width: 12px;
+}
+
+.header__add-button {
+  align-self: center;
+ width: 288px;
+ height: 52px;
+   margin-top: 20px;
+   margin-bottom:20px;
+}
+
+  }
