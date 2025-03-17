@@ -5,11 +5,11 @@
     grid-template-columns: repeat(auto-fit, 413px);
     grid-gap: 40px 20px;
     justify-self: center;
+    border-bottom: 1px solid #21212166;
   }
   
   .grid__item {
-    height: 445px;
-    width: 413px;
+   max-width: 413px;
   }
 
   .grid__item-image {
@@ -19,8 +19,7 @@
   }
 
   .grid__item-info {
-    height: 32px;
-    width: 413px;
+     max-width: 413px;
     display: flex;
   }
 
@@ -28,7 +27,8 @@
     margin: 0;
     padding-top: 12px;
     max-width: 353px;
-    font-family: "Poppins", sans-serif;
+    color: #212121;
+    font-family: "Poppins", Arial, sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -40,6 +40,7 @@
   .grid__item-button {
     /* background: url(../images/like_button.png) center no-repeat; */
     border: none;
+    cursor: pointer;
     /* color: #212121; */
     align-self: center;
     height: 20px;
@@ -70,22 +71,18 @@
   
       }
       .grid__item{
-  
-        width: 288px;
-        height: 318PX;
+          max-width: 288px;
       }
       .grid__item-image{
         width: 288px;
         height: 288px;
       }
       .grid__item-info{
-        width: 288px;
-        height: 18px;
-  
+        max-width: 288px;
+          
       }
       .grid__item-title{
-        width: 95px;
-        height: 16px;
+        max-width: 95px;
         font-size: 16px;
         line-height: 1.0;
   

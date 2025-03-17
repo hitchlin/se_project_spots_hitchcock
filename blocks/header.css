@@ -1,16 +1,12 @@
 
 .header {
     padding-top: 34px;
-    max-height: 210px;
     text-overflow: ellipsis; 
   }
 
   .header__profile {
     display: flex;
-    max-height: 210px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     color: #212121;
     border-bottom: 1px solid #21212166;
     padding-bottom: 20px;
@@ -25,39 +21,48 @@
 
   .header__profile-info {
     max-width: 420px;
-    height: 190px;
     display: flex;
     flex-direction: column;
   }
 
   .header__title {
+    max-width: 420px;
     font-weight: 500;
     line-height: 1;
     font-size: 32px;
     margin: 0;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
   }
 
   .header__subheading {
+    max-width: 97px;
     opacity: 70%;
     font-weight: 500;
     line-height: 1;
     font-size: 16px;
     padding-top: 12px;
     margin: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    ttext-overflow: ellipsis;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   .header__edit-button {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    font-weight: 500;
     margin-top: auto;
     border: none;
     background: none;
     align-self: flex-start;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     font-size: 16px;
     line-height: 1;
     color: #212112;
@@ -70,6 +75,7 @@
   }
 
   .header__add-button {
+    cursor: pointer;
    /* background-image: url(../images/post_button.png) center no-repeat; */  
     border: none;
     /* background: none; */
@@ -77,10 +83,9 @@
     width: 157px;
     height:52px;
    margin-left: auto;
-   margin-right: 20px;
   background-color: #212121;
    color: #FCF5E5;
-   font-family: "Poppins", sans-serif;
+   font-family: "Poppins", Arial, sans-serif;
    border-radius: 8px; 
    font-weight: 500;
    font-size: 16px;
@@ -90,9 +95,9 @@
   .header__add-button:hover {
     opacity: 80%;
   }
-
-  @media screen and (max-width: 450px) {
-    .header {
+  
+ @media screen and (max-width: 450px) {
+.header {
       padding: 0px;
    padding-bottom: 20px;
   width: 288px;
@@ -104,7 +109,6 @@
  padding-top: 20px;
  width: 288px;
  margin: 0 auto;
- display:flex;
  flex-direction: column;
 }
 
