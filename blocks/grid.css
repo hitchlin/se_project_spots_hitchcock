@@ -54,15 +54,6 @@
     opacity: 100%;
   }
 
-  .horizontal-line-2 {
-    margin: 0 auto;
-    border: 1px solid #545454;
-    margin-top: 38px;
-    opacity: 40%;
-    width: 100%;
-    
-  }
-
   @media screen and (max-width: 450px) {
     .grid{
         margin: 0 auto;
@@ -82,7 +73,7 @@
           
       }
       .grid__item-title{
-        max-width: 95px;
+        max-width: 250px;
         font-size: 16px;
         line-height: 1.0;
   
@@ -93,9 +84,5 @@
         margin-left: 20px;
   
       }
-      .horizontal-line-2{
-        margin: 0 auto;
-        width: 288px;
-       
-      }
+  
   }

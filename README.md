@@ -1,21 +1,56 @@
-# Project 3: Spots
+# SE Project Spots
 
-### Overview  
+This project is made to work across all screen sizes with a responsive display. 
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Features
+
+This project is designed to share multiple photos on a page with other users. Users will be able to like the pictures and read comments the publisher posted. 
+
+## Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/se_project_spots.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd se_project_spots
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+1. Start the development server:
+    ```bash
+    npm start
+    ```
+2. Open your browser and navigate to:
+    ```
+    http://localhost:3000
+    ```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Add feature-name"
+    ```
+4. Push to your branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request.
+
+## Contact
+
+For questions or feedback, please contact hitchlin1109@gmail.com
