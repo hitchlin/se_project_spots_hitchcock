@@ -1,91 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Lincoln Hitchcock"> 
-    <meta name="description" content="Spots Website">
-    <meta name="keywords" content="">
-    <link rel="stylesheet" href="./pages/index.css">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Lincoln Hitchcock" />
+    <meta name="description" content="Spots Website" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <title>Spots</title>
   </head>
-<body>
-<header class="header">
-  <img class="header__logo" src="./images/logo.svg" alt="Spots Logo">
-</header>
+  <body>
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Spots Logo" />
+    </header>
 
-<main class="page">
-  <section class="profile page__section">
-    <div class="profile__body">
-      <img
-        class="profile__avatar"
-        src="./images/avatar.svg"
-        alt="user avatar"
-      />
-      <div class="profile__info">
-        <h1 class="profile__title">Bessie Coleman</h1>
-        <p class="profile__subheading">Civil Aviator</p>
+    <main class="page">
+      <section class="profile page__section">
+        <div class="profile__body">
+          <img
+            class="profile__avatar"
+            src="./images/avatar.svg"
+            alt="user avatar"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Bessie Coleman</h1>
+            <p class="profile__subheading">Civil Aviator</p>
 
-        <button class="profile__edit-button">
-          <img src="./images/edit_button.svg" alt="Edit Profile">
-          Edit Profile
-        </button>
+            <button class="profile__edit-button">
+              <img
+                src="./images/edit_button.svg"
+                alt="Edit Profile"
+                class="profile__edit-button"
+              />
+              Edit Profile
+            </button>
+          </div>
+          <button class="profile__add-button">
+            <img
+              src="./images/button-icon.svg"
+              class="profile__button-icon"
+              alt="New Post"
+            />New Post
+          </button>
+        </div>
+      </section>
+      <div class="grid page__section">
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_1.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">Val Thorens</h2>
+            <button class="grid__item-button" type="button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_2.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">Restaurant terrace</h2>
+            <button class="grid__item-button" type="button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_3.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">An outdoor cafe</h2>
+            <button class="grid__item-button" type="button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_4.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">
+              A very long bridge, over the forest lorem ipsum elafubivds
+            </h2>
+            <button class="grid__item-button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_5.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">Tunnel with morning light</h2>
+            <button class="grid__item-button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
+        <div class="grid__item">
+          <img
+            class="grid__item-image"
+            src="./images/image_6.svg"
+            alt="Spot 2"
+          />
+          <div class="grid__item-info">
+            <h2 class="grid__item-title">Mountain House</h2>
+            <button class="grid__item-button">
+              <img src="./images/like_button.svg" alt="Like Button" />
+            </button>
+          </div>
+        </div>
       </div>
-      <button class="profile__add-button">
-      <img src="./images/button-icon.svg" class="profile__button-icon" alt="New Post">New Post
-      </button>
-    </div>
-  </section>
-  <div class="grid page__section">
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_1.svg" alt="Spot 2">
-      <div class="grid__item-info">
-        <h2 class="grid__item-title">Val Thorens</h2>
-        <button class="grid__item-button" type="button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_2.svg" alt="Spot 2">
-      <div class="grid__item-info">
-        <h2 class="grid__item-title">Restaurant terrace</h2>
-        <button class="grid__item-button" type="button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_3.svg" alt="Spot 2">
-            <div class="grid__item-info">
-        <h2 class="grid__item-title">An outdoor cafe</h2>
-        <button class="grid__item-button" type="button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_4.svg" alt="Spot 2">
-      <div class="grid__item-info">
-        <h2 class="grid__item-title">
-          A very long bridge, over the forest lorem ipsum elafubivds
-        </h2>
-        <button class="grid__item-button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_5.svg" alt="Spot 2">
-      <div class="grid__item-info">
-        <h2 class="grid__item-title">Tunnel with morning light</h2>
-        <button class="grid__item-button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-    <div class="grid__item">
-      <img class="grid__item-image" src="./images/image_6.svg" alt="Spot 2">
-      <div class="grid__item-info">
-        <h2 class="grid__item-title">Mountain House</h2>
-        <button class="grid__item-button"><img src="./images/like_button.svg" alt="Like Button"></button>
-      </div>
-    </div>
-  </div>
-  <footer class="footer page__section">
-    <h2 class="footer__text">2024 © Spots</h2>
-  </footer>
-</main>
-</body>
+      <footer class="footer page__section">
+        <h2 class="footer__text">2024 © Spots</h2>
+      </footer>
+    </main>
+  </body>
 </html>
