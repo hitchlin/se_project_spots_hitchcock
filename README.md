@@ -2,6 +2,7 @@
 
 This project is made to work across all screen sizes with a responsive display.
 https://drive.google.com/file/d/1fDIhdysgvcPYnNfvT44rNaoBeEN4XNii/view?usp=sharing
+https://hitchlin.github.io/se_project_spots_hitchcock/
 
 ## Features
 
