@@ -23,3 +23,41 @@ newPostButton.addEventListener("click", function () {
 newPostCloseButton.addEventListener("click", function () {
   newPostModal.classList.remove("modal__is-opened");
 });
+
+const profileNameElement = document.querySelector(".profile__title");
+const profileJobElement = document.querySelector(".profile__subheading");
+const formTitle = document.querySelector("#profile-name-input");
+const formSubtitle = document.querySelector("#profile-description-input");
+
+formTitle.value = profileNameElement.textContent;
+formSubtitle.value = profileJobElement.textContent;
+
+const profileFormElement = document.querySelector("#edit-profile-modal");
+const nameInput = profileFormElement.querySelector("#profile-name-input");
+const jobInput = profileFormElement.querySelector("#profile-description-input");
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileNameElement.textContent = nameInput.value;
+  profileJobElement.textContent = jobInput.value;
+
+  editProfileModal.classList.remove("modal__is-opened");
+}
+
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+const addCardFormElement = document.querySelector("#new-post-modal");
+const imageNameInput = addCardFormElement.querySelector("#card-caption-input");
+const imageLinkInput = addCardFormElement.querySelector("#image-name-input");
+
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+
+  console.log(imageNameInput.value);
+  console.log(imageLinkInput.value);
+
+  newPostModal.classList.remove("modal__is-opened");
+}
+
+addCardFormElement.addEventListener("submit", handleAddCardSubmit);
