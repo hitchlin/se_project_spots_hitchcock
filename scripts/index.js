@@ -5,11 +5,11 @@ const editProfileCloseButton = editProfileModal.querySelector(
 );
 
 editProfileButton.addEventListener("click", function () {
-  editProfileModal.classList.add("modal__is-opened");
+  editProfileModal.classList.add("modal_is-opened");
 });
 
 editProfileCloseButton.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal__is-opened");
+  editProfileModal.classList.remove("modal_is-opened");
 });
 
 const newPostModal = document.querySelector("#new-post-modal");
@@ -17,11 +17,11 @@ const newPostButton = document.querySelector(".profile__add-button");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 
 newPostButton.addEventListener("click", function () {
-  newPostModal.classList.add("modal__is-opened");
+  newPostModal.classList.add("modal_is-opened");
 });
 
 newPostCloseButton.addEventListener("click", function () {
-  newPostModal.classList.remove("modal__is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 });
 
 const profileNameElement = document.querySelector(".profile__title");
@@ -32,9 +32,11 @@ const formSubtitle = document.querySelector("#profile-description-input");
 formTitle.value = profileNameElement.textContent;
 formSubtitle.value = profileJobElement.textContent;
 
-const profileFormElement = document.querySelector("#edit-profile-modal");
-const nameInput = profileFormElement.querySelector("#profile-name-input");
-const jobInput = profileFormElement.querySelector("#profile-description-input");
+const profileModalElement = document.querySelector("#edit-profile-modal");
+const nameInput = profileModalElement.querySelector("#profile-name-input");
+const jobInput = profileModalElement.querySelector(
+  "#profile-description-input"
+);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -42,14 +44,14 @@ function handleProfileFormSubmit(evt) {
   profileNameElement.textContent = nameInput.value;
   profileJobElement.textContent = jobInput.value;
 
-  editProfileModal.classList.remove("modal__is-opened");
+  editProfileModal.classList.remove("modal_is-opened");
 }
 
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+profileModalElement.addEventListener("submit", handleProfileFormSubmit);
 
-const addCardFormElement = document.querySelector("#new-post-modal");
-const imageNameInput = addCardFormElement.querySelector("#card-caption-input");
-const imageLinkInput = addCardFormElement.querySelector("#image-name-input");
+const addCardModalElement = document.querySelector("#new-post-modal");
+const imageNameInput = addCardModalElement.querySelector("#card-caption-input");
+const imageLinkInput = addCardModalElement.querySelector("#image-name-input");
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
@@ -57,7 +59,7 @@ function handleAddCardSubmit(evt) {
   console.log(imageNameInput.value);
   console.log(imageLinkInput.value);
 
-  newPostModal.classList.remove("modal__is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 }
 
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+addCardModalElement.addEventListener("submit", handleAddCardSubmit);

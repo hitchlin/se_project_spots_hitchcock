@@ -11,7 +11,7 @@
   align-items: center;
   font-family: "Poppins", Arial, sans-serif;
 }
-.modal__is-opened {
+.modal_is-opened {
   visibility: visible;
 }
 .modal__container {
@@ -72,6 +72,7 @@
 }
 .modal__input:hover {
   cursor: pointer;
+  opacity: 100%;
 }
 .modal__submit-button {
   max-width: 156px;
