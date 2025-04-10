@@ -53,6 +53,9 @@
   line-height: 110.00000000000001%;
   color: #212121;
   opacity: 70%;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
 }
 .modal__input {
   display: block;
@@ -60,6 +63,7 @@
   height: 52px;
   border-radius: 8px;
   border: 1px solid #21212166;
+  padding-left: 12px;
 }
 .modal__input::placeholder {
   color: #212121;
@@ -89,6 +93,7 @@
   .modal__container {
     margin-left: 10px;
     margin-right: 10px;
+    padding: 12px;
   }
   .modal__close-button {
     top: 12px;
@@ -99,9 +104,9 @@
     margin-top: 22px;
     margin-bottom: 34px;
   }
-  .modal__form {
-    margin-left: 10px;
-    margin-right: 10px;
+  .modal__submit-button {
+    max-width: 100%;
+    width: 100%;
   }
   .modal__input {
     margin-bottom: 24px;
