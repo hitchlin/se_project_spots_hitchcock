@@ -1,4 +1,4 @@
-.grid {
+.card__list {
   display: grid;
   margin: 20px auto 0px auto;
   justify-content: center;
@@ -9,22 +9,43 @@
   padding-bottom: 40px;
 }
 
-.grid__item {
+.card {
   max-width: 413px;
 }
 
-.grid__item-image {
+.card__item {
+  list-style: none;
+  position: relative;
+}
+
+.card__item-delete-button {
+  background: url(../images/delete_button.svg) center no-repeat;
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* Im unsure why the button is not changing color but I tried. Could you lead me in the right direction */
+.card__item-delete-button:hover {
+  background: url(../images/delete_button_hover.svg) center no-repeat;
+  color: #ff6565;
+}
+
+.card__item-image {
   width: 413px;
   height: 413px;
   border-radius: 8px;
 }
 
-.grid__item-info {
+.card__item-info {
   max-width: 413px;
   display: flex;
 }
 
-.grid__item-title {
+.card__item-title {
   margin: 0;
   padding-top: 12px;
   max-width: 353px;
@@ -38,11 +59,10 @@
   overflow: hidden;
 }
 
-.grid__item-button {
-  /* background: url(../images/like_button.png) center no-repeat; */
+.card__item-button {
+  background: url(../images/like_button.svg) center no-repeat;
   border: none;
   cursor: pointer;
-  /* color: #212121; */
   align-self: center;
   height: 20px;
   width: 23px;
@@ -51,33 +71,37 @@
   opacity: 40%;
 }
 
-.grid__item-button:hover {
+.card__item-button_active {
+  background: url(../images/liked_button.svg) center no-repeat;
+}
+
+.card__item-button:hover {
   opacity: 100%;
 }
 
 @media screen and (max-width: 627px) {
-  .grid {
+  .card__list {
     margin: 0 auto;
     grid-template-columns: repeat(auto-fit, 288px);
     grid-gap: 20px 20px;
     padding-bottom: 20px;
   }
-  .grid__item {
+  .card__item {
     max-width: 288px;
   }
-  .grid__item-image {
+  .card__item-image {
     width: 288px;
     height: 288px;
   }
-  .grid__item-info {
+  .card__item-info {
     max-width: 288px;
   }
-  .grid__item-title {
+  .card__item-title {
     max-width: 250px;
     font-size: 16px;
     line-height: 1;
   }
-  .grid__item-button {
+  .card__item-button {
     height: 18px;
     width: 20px;
     margin-right: 8px;

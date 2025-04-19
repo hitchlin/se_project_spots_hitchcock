@@ -2,7 +2,7 @@
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
-function closeModal(modal) {  
+function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 //defining variables for profile Modal
@@ -11,6 +11,19 @@ const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileCloseButton = editProfileModal.querySelector(
   ".modal__close-button"
 );
+
+//defining variables for image modal
+const imageModal = document.querySelector("#card-image-modal");
+const imageModalCloseButton = imageModal.querySelector(
+  ".modal__close-button_type-preview"
+);
+const imageModalImage = imageModal.querySelector(".modal__image");
+const imageModalCaption = imageModal.querySelector(".modal__image-caption");
+
+//defining variables for new post Modal
+const newPostModal = document.querySelector("#new-post-modal");
+const newPostButton = document.querySelector(".profile__add-button");
+const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 
 //Checking for edit profile and responding
 editProfileButton.addEventListener("click", function () {
@@ -21,11 +34,6 @@ editProfileButton.addEventListener("click", function () {
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
-
-//defining variables for new post Modal
-const newPostModal = document.querySelector("#new-post-modal");
-const newPostButton = document.querySelector(".profile__add-button");
-const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 
 //Checking for new post button and responding
 newPostButton.addEventListener("click", function () {
@@ -64,56 +72,112 @@ function handleProfileFormSubmit(evt) {
   closeModal(editProfileModal);
 }
 
-//responding to form submission
+//responding to porfile form submission
 profileModalElement.addEventListener("submit", handleProfileFormSubmit);
 
-//definging variables for card modal
+//defining variables for card modal
 const addCardModalElement = document.querySelector("#new-post-modal");
 const imageNameInput = addCardModalElement.querySelector("#card-caption-input");
 const imageLinkInput = addCardModalElement.querySelector("#image-name-input");
 
-//checking for form submission
+//function for new post form submission
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  console.log(imageNameInput.value);
-  console.log(imageLinkInput.value);
+  const cardEl = getCardElement({
+    name: imageNameInput.value,
+    link: imageLinkInput.value,
+  });
 
+  cardList.prepend(cardEl); // Prepend the new card to the list
+  imageNameInput.value = ""; // Clear the input field after submission
+  imageLinkInput.value = ""; // Clear the input field after submission
+  // Close the modal after submission
   closeModal(newPostModal);
 }
 
-//responding to form submission
+//responding to new post form submission
 addCardModalElement.addEventListener("submit", handleAddCardSubmit);
+
+//selecting card template and assigning a variable
+const cardTemplate = document
+  .querySelector("#image-card-template")
+  .content.querySelector(".card__item");
+
+//defining where cards will go in the DOM
+const cardList = document.querySelector(".card__list");
 
 //defining variables for new card elements
 const initalCards = [
   {
     name: "Fern",
-    link: "https://unsplash.com/photos/green-fern-plant-in-dark-room-m3r7MJ-08-k",
+    link: "https://images.unsplash.com/photo-1599591546314-82af3e9e1972?q=80&w=3928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Water on Leaf",
-    link: "https://unsplash.com/photos/green-leaf-with-water-droplets-B88p-Eftuok",
+    link: "https://images.unsplash.com/photo-1609583064933-570be5750f41?q=80&w=1969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Palm",
-    link: "https://unsplash.com/photos/green-palm-plant-during-night-time-kDaxao_v_5o",
+    link: "https://images.unsplash.com/photo-1600854163097-3602918f7a9a?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Jasmine",
-    link: "https://unsplash.com/photos/a-white-flower-with-green-leaves-in-the-background-gMimc1SQ-Mo",
+    link: "https://images.unsplash.com/photo-1609670441811-9ca2a33cd040?q=80&w=3986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Tree",
-    link: "https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-io6ZEPeZMxc",
+    link: "https://images.unsplash.com/photo-1620977791495-4f3deba7e1f3?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Hosta",
-    link: "https://unsplash.com/photos/green-leaves-plant-during-daytime-gPGVsbLCh-0",
+    link: "https://images.unsplash.com/photo-1629268810152-b99c4f0ef937?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
-//Looping through array to log name of each element
+//Looping through intia cards and creating card elements
 initalCards.forEach(function (card) {
-  console.log(card.name);
-};
+  const cardElement = getCardElement(card);
+  cardList.append(cardElement);
+});
+
+//creating a function to get card elements adn setting event listener on all like buttons
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageEl = cardElement.querySelector(".card__item-image");
+  const cardTitleEl = cardElement.querySelector(".card__item-title");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikeButton = cardElement.querySelector(".card__item-button");
+  cardLikeButton.addEventListener("click", () => {
+    // Toggle the active class on the like button when clicked
+    console.log("clicked");
+    cardLikeButton.classList.toggle("card__item-button_active");
+  });
+
+  const cardDeleteButton = cardElement.querySelector(
+    ".card__item-delete-button"
+  );
+  cardDeleteButton.addEventListener("click", () => {
+    // Remove the card element from the DOM when the delete button is clicked
+    cardElement.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    // Open the image modal when the card image is clicked
+    imageModalImage.src = data.link;
+    imageModalImage.alt = data.name;
+    imageModalCaption.textContent = data.name;
+    openModal(imageModal);
+  });
+
+  imageModalCloseButton.addEventListener("click", () => {
+    // Close the image modal when the close button is clicked
+    closeModal(imageModal);
+  });
+  return cardElement;
+}

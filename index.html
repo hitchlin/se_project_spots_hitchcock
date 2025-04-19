@@ -45,88 +45,88 @@
           </button>
         </div>
       </section>
-      <div class="grid page__section">
-        <div class="grid__item">
+      <ul class="card__list page__section">
+        <!-- <div class="card__item"> 
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_1.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">Val Thorens</h2>
-            <button class="grid__item-button" type="button">
+          <div class="card__item-info">
+            <h2 class="card__item-title">Val Thorens</h2>
+            <button class="card__item-button" type="button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
         </div>
-        <div class="grid__item">
+        <div class="card__item">
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_2.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">Restaurant terrace</h2>
-            <button class="grid__item-button" type="button">
+          <div class="card__item-info">
+            <h2 class="card__item-title">Restaurant terrace</h2>
+            <button class="card__item-button" type="button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
         </div>
-        <div class="grid__item">
+        <div class="card__item">
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_3.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">An outdoor cafe</h2>
-            <button class="grid__item-button" type="button">
+          <div class="card__item-info">
+            <h2 class="card__item-title">An outdoor cafe</h2>
+            <button class="card__item-button" type="button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
         </div>
-        <div class="grid__item">
+        <div class="card__item">
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_4.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">
+          <div class="card__item-info">
+            <h2 class="card__item-title">
               A very long bridge, over the forest lorem ipsum elafubivds
             </h2>
-            <button class="grid__item-button">
+            <button class="card__item-button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
         </div>
-        <div class="grid__item">
+        <div class="card__item">
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_5.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">Tunnel with morning light</h2>
-            <button class="grid__item-button">
+          <div class="card__item-info">
+            <h2 class="card__item-title">Tunnel with morning light</h2>
+            <button class="card__item-button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
         </div>
-        <div class="grid__item">
+        <div class="card__item">
           <img
-            class="grid__item-image"
+            class="card__item-image"
             src="./images/image_6.svg"
             alt="Spot 2"
           />
-          <div class="grid__item-info">
-            <h2 class="grid__item-title">Mountain House</h2>
-            <button class="grid__item-button">
+          <div class="card__item-info">
+            <h2 class="card__item-title">Mountain House</h2>
+            <button class="card__item-button">
               <img src="./images/like_button.svg" alt="Like Button" />
             </button>
           </div>
-        </div>
-      </div>
+        </div> -->
+      </ul>
       <footer class="footer page__section">
         <h2 class="footer__text">2024 © Spots</h2>
       </footer>
@@ -180,7 +180,27 @@
           </form>
         </div>
       </div>
+      <div class="modal" id="card-image-modal">
+        <div class="modal__image-container">
+          <button
+            class="modal__close-button modal__close-button_type-preview"
+            type="button"
+          ></button>
+          <img class="modal__image" />
+          <p class="modal__image-caption"></p>
+        </div>
+      </div>
     </main>
+    <template id="image-card-template">
+      <li class="card__item">
+        <button class="card__item-delete-button" type="button"></button>
+        <img class="card__item-image" />
+        <div class="card__item-info">
+          <h2 class="card__item-title"></h2>
+          <button class="card__item-button" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
