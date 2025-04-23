@@ -55,4 +55,4 @@ Contributions are welcome! Please follow these steps:
 
 ## Contact
 
-For questions or feedback, please contact hitchlin1109@gmail.com
+For questions or feedback, please contact hitchlin1109@gmail.com.
