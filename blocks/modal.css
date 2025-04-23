@@ -100,7 +100,9 @@
   position: relative;
 }
 .modal__image {
-  position: relative;
+  position: flex;
+  align-self: center;
+  justify-self: center;
   max-height: 80vh;
   max-width: 80vw;
   width: 100%;
@@ -115,6 +117,7 @@
   font-weight: 500;
   line-height: 1.2;
 }
+
 @media screen and (max-width: 627px) {
   .modal__container {
     margin-left: 10px;
@@ -125,6 +128,11 @@
     top: 12px;
     right: 12px;
   }
+  .modal__close-button_type-preview {
+    right: -16px;
+    top: -158px;
+  }
+
   .modal__title {
     font-size: 20px;
     margin-top: 22px;
