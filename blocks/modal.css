@@ -139,8 +139,8 @@
     right: 12px;
   }
   .modal__close-button_type-preview {
-    right: -16px;
-    top: -158px;
+    right: 0px;
+    top: -48px;
   }
 
   .modal__title {
