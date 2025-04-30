@@ -24,9 +24,11 @@ const imageModalCaption = imageModal.querySelector(".modal__image-caption");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostButton = document.querySelector(".profile__add-button");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
-
+const SubmitButtonElement = newPostModal.querySelector(".modal__submit-button");
 //Checking for edit profile and responding
 editProfileButton.addEventListener("click", function () {
+  resetValidation(profileModalElement, [nameInput, jobInput]);
+  disableButton(SubmitButtonElement);
   openModal(editProfileModal);
 });
 
@@ -93,6 +95,7 @@ function handleAddCardSubmit(evt) {
   imageNameInput.value = ""; // Clear the input field after submission
   imageLinkInput.value = ""; // Clear the input field after submission
   // Close the modal after submission
+  disableButton(SubmitButtonElement);
   closeModal(newPostModal);
 }
 
