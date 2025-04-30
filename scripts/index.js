@@ -75,6 +75,7 @@ editProfileCloseButton.addEventListener("click", function () {
 });
 
 newPostButton.addEventListener("click", function () {
+  disableButton(SubmitButtonElement, settings);
   openModal(newPostModal);
 });
 
@@ -107,7 +108,7 @@ function handleAddCardSubmit(evt) {
   cardList.prepend(cardEl);
   imageNameInput.value = "";
   imageLinkInput.value = "";
-  disableButton(SubmitButtonElement);
+  disableButton(SubmitButtonElement, settings);
   closeModal(newPostModal);
 }
 
