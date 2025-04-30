@@ -65,8 +65,8 @@ const initalCards = [
 ];
 
 editProfileButton.addEventListener("click", function () {
-  resetValidation(profileModalElement, [nameInput, jobInput]);
-  disableButton(SubmitButtonElement);
+  resetValidation(profileModalElement, [nameInput, jobInput], settings);
+  disableButton(SubmitButtonElement, settings);
   openModal(editProfileModal);
 });
 
