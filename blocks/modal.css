@@ -47,9 +47,8 @@
 }
 .modal__close-button:hover {
   opacity: 100%;
-  background: url(../images/close_button_white.svg) center no-repeat;
+  background: url(../images/close_button_hover.svg) center no-repeat;
   cursor: pointer;
-  background-color: #212121;
 }
 .modal__title {
   color: #212121;

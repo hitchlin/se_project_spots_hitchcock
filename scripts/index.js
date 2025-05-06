@@ -4,6 +4,13 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  removeCloseEventListener(modal);
+}
+
+function removeCloseEventListener(modal) {
+  modal.removeEventListener("click", function () {
+    closeModal(modal);
+  });
 }
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -63,6 +70,11 @@ const initalCards = [
     link: "https://images.unsplash.com/photo-1629268810152-b99c4f0ef937?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
+const modalOverlayEditProfile = document.querySelector(
+  "#edit-profile-modal-container"
+);
+const modalOverlayNewPost = document.querySelector("#new-post-modal-container");
+const modalOverlayImage = document.querySelector("#card-image-modal-container");
 
 editProfileButton.addEventListener("click", function () {
   resetValidation(profileModalElement, [nameInput, jobInput], settings);
@@ -110,7 +122,7 @@ function handleAddCardSubmit(evt) {
   cardList.prepend(cardEl);
   imageNameInput.value = "";
   imageLinkInput.value = "";
-  disableButton(SubmitButtonElement, settings);
+  disableButton(submitButtonElement, settings);
   closeModal(newPostModal);
 }
 
@@ -155,19 +167,28 @@ function getCardElement(data) {
   return cardElement;
 }
 
-imageModal.addEventListener("click", function () {
-  closeModal(imageModal);
-  imageModalCloseButton.removeEventListener("click", function () {
-    closeModal(imageModal);
-  });
-});
-
 document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
-    console.log("Escape key pressed");
+    closeModal(editProfileModal);
+    closeModal(newPostModal);
     closeModal(imageModal);
-    imageModalCloseButton.removeEventListener("click", function () {
-      closeModal(imageModal);
-    });
+  }
+});
+
+newPostModal.addEventListener("click", function (evt) {
+  if (evt.target === newPostModal) {
+    closeModal(newPostModal);
+  }
+});
+
+editProfileModal.addEventListener("click", function (evt) {
+  if (evt.target === editProfileModal) {
+    closeModal(editProfileModal);
+  }
+});
+
+imageModal.addEventListener("click", function (evt) {
+  if (evt.target === imageModal) {
+    closeModal(imageModal);
   }
 });
