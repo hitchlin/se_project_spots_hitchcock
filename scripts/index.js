@@ -6,7 +6,6 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  removeCloseEventListener(modal);
 }
 
 const editProfileModal = document.querySelector("#edit-profile-modal");

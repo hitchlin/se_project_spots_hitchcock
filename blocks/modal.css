@@ -10,9 +10,11 @@
   justify-content: center;
   align-items: center;
   font-family: "Poppins", Arial, sans-serif;
+  opacity: 0;
 }
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
 }
 .modal__container {
   max-width: 730px;
