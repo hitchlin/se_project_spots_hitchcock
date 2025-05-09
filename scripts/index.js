@@ -1,16 +1,12 @@
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  closeModalOnOverlayClick(modal);
+  closeModalOnEscape(modal);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   removeCloseEventListener(modal);
-}
-
-function removeCloseEventListener(modal) {
-  modal.removeEventListener("click", function () {
-    closeModal(modal);
-  });
 }
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -167,28 +163,24 @@ function getCardElement(data) {
   return cardElement;
 }
 
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    closeModal(editProfileModal);
-    closeModal(newPostModal);
-    closeModal(imageModal);
-  }
-});
+function closeModalOnOverlayClick(modal) {
+  modal.addEventListener("click", function (evt) {
+    if (evt.target === modal) {
+      closeModal(modal);
+      modal.removeEventListener("click", function () {
+        closeModal(modal);
+      });
+    }
+  });
+}
 
-newPostModal.addEventListener("click", function (evt) {
-  if (evt.target === newPostModal) {
-    closeModal(newPostModal);
-  }
-});
-
-editProfileModal.addEventListener("click", function (evt) {
-  if (evt.target === editProfileModal) {
-    closeModal(editProfileModal);
-  }
-});
-
-imageModal.addEventListener("click", function (evt) {
-  if (evt.target === imageModal) {
-    closeModal(imageModal);
-  }
-});
+function closeModalOnEscape(modal) {
+  document.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape") {
+      closeModal(modal);
+      document.removeEventListener("keydown", function () {
+        closeModal(modal);
+      });
+    }
+  });
+}
