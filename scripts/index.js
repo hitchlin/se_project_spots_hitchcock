@@ -6,6 +6,12 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", function () {
+    closeModal(modal);
+  });
+  modal.removeEventListener("click", function () {
+    closeModal(modal);
+  });
 }
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -166,10 +172,6 @@ function closeModalOnOverlayClick(modal) {
   modal.addEventListener("click", function (evt) {
     if (evt.target === modal) {
       closeModal(modal);
-      modal.removeEventListener("click", function () {
-        closeModal(modal);
-      });
-    }
   });
 }
 
@@ -177,9 +179,6 @@ function closeModalOnEscape(modal) {
   document.addEventListener("keydown", function (evt) {
     if (evt.key === "Escape") {
       closeModal(modal);
-      document.removeEventListener("keydown", function () {
-        closeModal(modal);
-      });
     }
   });
 }
