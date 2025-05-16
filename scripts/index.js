@@ -172,6 +172,7 @@ function closeModalOnOverlayClick(modal) {
   modal.addEventListener("click", function (evt) {
     if (evt.target === modal) {
       closeModal(modal);
+    }
   });
 }
 
