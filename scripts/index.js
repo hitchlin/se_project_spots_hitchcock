@@ -7,9 +7,7 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", function () {
-    closeModal(modal);
-  });
+  document.removeEventListener("keydown", closeModalOnEscape);
   modal.removeEventListener("click", handleClick);
 }
 
@@ -115,8 +113,8 @@ function handleAddCardSubmit(evt) {
   });
 
   cardList.prepend(cardEl);
-  imageNameInput.value = "";
-  imageLinkInput.value = "";
+  imageNameInput.value.reset();
+  imageLinkInput.value.reset();
   disableButton(submitButtonElement, settings);
   closeModal(newPostModal);
 }
