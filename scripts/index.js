@@ -2,7 +2,7 @@ function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", closeModalOnEscape);
 
-  modal.addEventListener("click", handleClickOverlay);
+  modal.addEventListener("click", handleClick);
 }
 
 function closeModal(modal) {
@@ -10,12 +10,13 @@ function closeModal(modal) {
   document.removeEventListener("keydown", function () {
     closeModal(modal);
   });
-  modal.removeEventListener("click", handleClickOverlay);
+  modal.removeEventListener("click", handleClick);
 }
 
-function handleClickOverlay(evt) {
+function handleClick(evt) {
   const modal = document.querySelector(".modal_is-opened");
-  if (evt.target === modal) {
+  const closeButton = modal.querySelector(".modal__close-button");
+  if (evt.target === modal || evt.target === closeButton) {
     closeModal(modal);
   }
 }
@@ -90,16 +91,8 @@ editProfileButton.addEventListener("click", function () {
   openModal(editProfileModal);
 });
 
-editProfileCloseButton.addEventListener("click", function () {
-  closeModal(editProfileModal);
-});
-
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
-});
-
-newPostCloseButton.addEventListener("click", function () {
-  closeModal(newPostModal);
 });
 
 function handleProfileFormSubmit(evt) {
@@ -172,7 +165,3 @@ function closeModalOnEscape(evt) {
     closeModal(openedModal);
   }
 }
-
-imageModalCloseButton.addEventListener("click", () => {
-  closeModal(imageModal);
-});
