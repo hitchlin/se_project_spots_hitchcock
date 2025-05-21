@@ -1,7 +1,8 @@
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  closeModalOnOverlayClick(modal);
-  closeModalOnEscape(modal);
+  document.addEventListener("keydown", closeModalOnEscape);
+
+  modal.addEventListener("click", handleClickOverlay);
 }
 
 function closeModal(modal) {
@@ -9,9 +10,14 @@ function closeModal(modal) {
   document.removeEventListener("keydown", function () {
     closeModal(modal);
   });
-  modal.removeEventListener("click", function () {
+  modal.removeEventListener("click", handleClickOverlay);
+}
+
+function handleClickOverlay(evt) {
+  const modal = document.querySelector(".modal_is-opened");
+  if (evt.target === modal) {
     closeModal(modal);
-  });
+  }
 }
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -81,19 +87,14 @@ editProfileButton.addEventListener("click", function () {
   resetValidation(profileModalElement, [nameInput, jobInput], settings);
   formTitle.value = profileNameElement.textContent;
   formSubtitle.value = profileJobElement.textContent;
-  disableButton(submitButtonElement, settings);
   openModal(editProfileModal);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
-  editProfileCloseButton.removeEventListener("click", function () {
-    closeModal(editProfileModal);
-  });
 });
 
 newPostButton.addEventListener("click", function () {
-  disableButton(submitButtonElement, settings);
   openModal(newPostModal);
 });
 
@@ -162,24 +163,16 @@ function getCardElement(data) {
     openModal(imageModal);
   });
 
-  imageModalCloseButton.addEventListener("click", () => {
-    closeModal(imageModal);
-  });
   return cardElement;
 }
 
-function closeModalOnOverlayClick(modal) {
-  modal.addEventListener("click", function (evt) {
-    if (evt.target === modal) {
-      closeModal(modal);
-    }
-  });
+function closeModalOnEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    closeModal(openedModal);
+  }
 }
 
-function closeModalOnEscape(modal) {
-  document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-      closeModal(modal);
-    }
-  });
-}
+imageModalCloseButton.addEventListener("click", () => {
+  closeModal(imageModal);
+});
